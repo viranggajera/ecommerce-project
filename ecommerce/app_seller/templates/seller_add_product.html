@@ -1,0 +1,89 @@
+{% extends 'seller_base.html' %}
+ {% block content %}
+  {% load static %}
+
+	<main>
+		<div class="mb-4 pb-4"></div>
+		<section class="login-register container" >
+      <ul class="nav nav-tabs mb-5" id="login_register" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link nav-link_underscore active" id="login-tab" data-bs-toggle="tab" href="#tab-item-login" role="tab" aria-controls="tab-item-login" aria-selected="true">add-product</a>
+        </li>
+        
+      </ul>
+      <div class="tab-content pt-2" id="login_register_tab_content" >
+        <div class="tab-pane fade show active" id="tab-item-login" role="tabpanel" aria-labelledby="login-tab">
+            <h2> {{msg}}</h2>
+			<div class="login-form">
+            <form action="{%url 'seller_add_product'%}" class="needs-validation" method="post" enctype="multipart/form-data">
+				      {%csrf_token%}
+              <div class="form-floating mb-3">
+                <input name="pname" type="text" class="form-control form-control_gray" id="customerNameEmailInput" placeholder="Email address *" required>
+                <label for="customerNameEmailInput">product-name*</label>
+              </div>
+    
+              <div class="pb-3"></div>
+    
+              <div class="form-floating mb-3">
+                <input name="price" type="text" class="form-control form-control_gray" id="customerPasswodInput" placeholder="Password *" required>
+                <label for="customerPasswodInput"> product-price*</label>
+              </div>
+
+              
+
+              <div class="form-floating mb-3">
+                <input name="des" type="text" class="form-control form-control_gray" id="customerPasswodInput" placeholder="Password *" required>
+                <label for="customerPasswodInput">Product-discription*</label>
+              </div>
+
+              
+    
+
+              <div class="form-floating mb-3">
+                <input name="product_pic" type="file" class="form-control form-control_gray" id="customerPasswodInput" required>
+                
+                <label for="customerPasswodInput">product-image</label>
+              </div>
+
+
+              <div class="form-floating mb-3">
+                <input name="product_pic1" type="file" class="form-control form-control_gray" id="customerPasswodInput" required>
+                
+                <label for="customerPasswodInput">Other-image</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input name="product_pic2" type="file" class="form-control form-control_gray" id="customerPasswodInput" required>
+                
+                <label for="customerPasswodInput">Other-image</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input name="product_pic3" type="file" class="form-control form-control_gray" id="customerPasswodInput" required>
+                
+                <label for="customerPasswodInput">Other-image</label>
+              </div>
+
+              
+              
+    
+              <button class="btn btn-primary w-100 text-uppercase" type="submit">add_product</button>
+    
+              
+            </form>
+          </div>
+        </div>
+        
+    
+              <div class="pb-3"></div>
+
+              
+          </div>
+        </div>
+      </div>
+		</section>
+	</main>
+
+	<div class="mb-5 pb-xl-5"></div>
+	
+	{% endblock %}
